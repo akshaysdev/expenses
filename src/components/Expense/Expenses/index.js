@@ -23,7 +23,11 @@ const Expenses = (props) => {
       <ExpensesFilter onFilterChange={handleDropDownChange} />
       <ExpensesTotal expenses={filteredExpenses} />
       <ExpensesChart expenses={filteredExpenses} />
-      <ExpensesList expenses={filteredExpenses} />
+      <ExpensesList
+        expenses={filteredExpenses}
+        onClickDeleteExpenseData={props.onClickDeleteExpenseData}
+        onEditExpenseData={props.onEditExpenseData}
+      />
     </Card>
   );
 };

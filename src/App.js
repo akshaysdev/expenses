@@ -13,10 +13,28 @@ const App = () => {
     setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
+  const deleteExpenseData = (event) => {
+    const expenseId = event.target.id;
+    setExpenses((prevExpenses) => {
+      prevExpenses = prevExpenses.filter((currExpense) => currExpense.id !== expenseId);
+      return [...prevExpenses];
+    });
+  };
+
+  const editExpenseData = (updateExpense) => {
+    const updatedExpenses = expenses.map((expense) => {
+      if (expense.id === updateExpense.id) {
+        expense = { ...updateExpense };
+      }
+      return expense;
+    });
+    setExpenses(updatedExpenses);
+  };
+
   return (
     <div className="App">
       <NewExpense onAddExpenseData={addExpenseData} />
-      <Expenses expenses={expenses} />
+      <Expenses expenses={expenses} onEditExpenseData={editExpenseData} onClickDeleteExpenseData={deleteExpenseData} />
     </div>
   );
 };

@@ -35,6 +35,32 @@
   border-radius: 12px;
 }
 
+.expense-item__delete {
+  font-size: 1rem;
+  color: white;
+  background-color: #ac2626;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.expense-item__delete:hover {
+  background-color: #a94a4a;
+}
+
+.expense-item__edit {
+  font-size: 1rem;
+  color: white;
+  background-color: #428729;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.expense-item__edit:hover {
+  background-color: #638656;
+}
+
 @media (min-width: 580px) {
   .expense-item__description {
     flex-direction: row;
